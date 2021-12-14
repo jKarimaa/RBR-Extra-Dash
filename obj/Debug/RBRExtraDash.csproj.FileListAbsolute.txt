@@ -1,0 +1,19 @@
+C:\Users\joona\source\repos\RBRExtraDash\bin\Debug\RBRExtraDash.pdb
+C:\Users\joona\source\repos\RBRExtraDash\obj\Debug\RBRExtraDash.csprojAssemblyReference.cache
+C:\Users\joona\source\repos\RBRExtraDash\obj\Debug\RBRExtraDash.pdb
+C:\Users\joona\source\repos\RBRExtraDash\bin\Debug\RBRExtraDash.dll.config
+C:\Users\joona\source\repos\RBRExtraDash\bin\Debug\RBRExtraDash.dll
+C:\Users\joona\source\repos\RBRExtraDash\obj\Debug\RBRExtraDash.dll
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash.csprojAssemblyReference.cache
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\Properties\DesignTimeResources.baml
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\SettingsControlDemo.g.cs
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash_MarkupCompile.cache
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash_MarkupCompile.lref
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\SettingsControlDemo.baml
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash.g.resources
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash.csproj.CopyComplete
+C:\Program Files (x86)\SimHub\RBRExtraDash.dll.config
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash.dll
+C:\Program Files (x86)\SimHub\PluginSdk\RBRExtraDash\obj\Debug\RBRExtraDash.pdb
+C:\Program Files (x86)\SimHub\RBRExtraDash.dll
+C:\Program Files (x86)\SimHub\RBRExtraDash.pdb

@@ -31,9 +31,6 @@ namespace RBRExtraDash
         /// <param name="data"></param>
         public void DataUpdate(PluginManager pluginManager, ref GameData data)
         {
-            // Define the value of our property (declared in init)
-            //pluginManager.SetPropertyValue("CurrentDateTime", this.GetType(), DateTime.Now);
-
             if (data.GameRunning)
             {
                 if (data.GameName == "RBR")
@@ -42,7 +39,6 @@ namespace RBRExtraDash
                     pluginManager.SetPropertyValue("CurrentTrip", this.GetType(), trip - Settings.GetTrip());
                 }
             }
-
         }
 
         /// <summary>
@@ -73,21 +69,13 @@ namespace RBRExtraDash
         /// <param name="pluginManager"></param>
         public void Init(PluginManager pluginManager)
         {
-
-            //SimHub.Logging.Current.Info("Starting RBR Extra Dash plugin");
-
-
             // Load settings
             Settings = this.ReadCommonSettings<RBRExtraDashSettings>("GeneralSettings", () => new RBRExtraDashSettings());
 
 
             // Declare a property available in the property list
-            //pluginManager.AddProperty("CurrentDateTime", this.GetType(), DateTime.Now);
             pluginManager.AddProperty("LastTrip", this.GetType(), Settings.GetTrip());
             pluginManager.AddProperty("CurrentTrip", this.GetType(), 0.0);
-
-            // Declare an event 
-            //pluginManager.AddEvent("tripReset", this.GetType());
 
             // Declare an action which can be called
             pluginManager.AddAction("tripReset", this.GetType(), (a, b) =>

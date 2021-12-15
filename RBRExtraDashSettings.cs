@@ -5,21 +5,7 @@
     /// </summary>
     public class RBRExtraDashSettings
     {
-        private double trip = 0.0;
-
-        public void SetTrip(double newTrip)
-        {
-            trip = newTrip;
-        }
-
-        public double GetTrip()
-        {
-            return trip;
-        }
-
-        public void ResetTrip()
-        {
-            trip = 0.0;
-        }
+        public double trip = 0.0;
+        public double lastTrip = 0.0;
     }
 }

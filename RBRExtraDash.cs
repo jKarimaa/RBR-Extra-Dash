@@ -36,7 +36,20 @@ namespace RBRExtraDash
                 if (data.GameName == "RBR")
                 {
                     trip = Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameData.StintOdo"));
-                    pluginManager.SetPropertyValue("CurrentTrip", this.GetType(), trip - Settings.trip);
+                    
+                    if (Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameRawData.StageStartCountdown")) > 4)
+                    {
+                        if (Settings.trip != 0.0)
+                        {
+                            Settings.trip = 0.0;
+                            pluginManager.SetPropertyValue("LastTrip", this.GetType(), 0.0);
+                            //SimHub.Logging.Current.Info("Trip reset");
+                        }
+   
+                    } else
+                    {
+                        pluginManager.SetPropertyValue("CurrentTrip", this.GetType(), trip - Settings.trip);
+                    }
                 }
             }
         }

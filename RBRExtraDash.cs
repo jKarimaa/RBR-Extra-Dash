@@ -36,7 +36,20 @@ namespace RBRExtraDash
                 if (data.GameName == "RBR")
                 {
                     trip = Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameData.StintOdo"));
-                    pluginManager.SetPropertyValue("CurrentTrip", this.GetType(), trip - Settings.GetTrip());
+                    
+                    if (Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameRawData.StageStartCountdown")) > 4)
+                    {
+                        if (Settings.trip != 0.0)
+                        {
+                            Settings.trip = 0.0;
+                            pluginManager.SetPropertyValue("LastTrip", this.GetType(), 0.0);
+                            //SimHub.Logging.Current.Info("Trip reset");
+                        }
+   
+                    } else
+                    {
+                        pluginManager.SetPropertyValue("CurrentTrip", this.GetType(), trip - Settings.trip);
+                    }
                 }
             }
         }
@@ -74,17 +87,15 @@ namespace RBRExtraDash
 
 
             // Declare a property available in the property list
-            pluginManager.AddProperty("LastTrip", this.GetType(), Settings.GetTrip());
+            /*pluginManager.AddProperty("LastTrip", this.GetType(), 0.0);*/
             pluginManager.AddProperty("CurrentTrip", this.GetType(), 0.0);
 
             // Declare an action which can be called
             pluginManager.AddAction("tripReset", this.GetType(), (a, b) =>
             {
-                Settings.SetTrip(trip);
-
-                pluginManager.SetPropertyValue("LastTrip", this.GetType(), trip);
-
-                SimHub.Logging.Current.Info("Trip reset to: " + trip);
+                /*pluginManager.SetPropertyValue("LastTrip", this.GetType(), trip - Settings.trip);*/
+                Settings.trip = trip;
+                //SimHub.Logging.Current.Info("Trip reset to: " + trip);
             });
         }
     }

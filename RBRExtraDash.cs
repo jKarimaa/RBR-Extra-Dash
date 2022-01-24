@@ -87,13 +87,13 @@ namespace RBRExtraDash
 
 
             // Declare a property available in the property list
-            pluginManager.AddProperty("LastTrip", this.GetType(), 0.0);
+            /*pluginManager.AddProperty("LastTrip", this.GetType(), 0.0);*/
             pluginManager.AddProperty("CurrentTrip", this.GetType(), 0.0);
 
             // Declare an action which can be called
             pluginManager.AddAction("tripReset", this.GetType(), (a, b) =>
             {
-                pluginManager.SetPropertyValue("LastTrip", this.GetType(), trip - Settings.trip);
+                /*pluginManager.SetPropertyValue("LastTrip", this.GetType(), trip - Settings.trip);*/
                 Settings.trip = trip;
                 //SimHub.Logging.Current.Info("Trip reset to: " + trip);
             });

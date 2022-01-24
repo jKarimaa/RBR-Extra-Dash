@@ -81,6 +81,7 @@
     <Compile Include="SettingsControlDemo.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>

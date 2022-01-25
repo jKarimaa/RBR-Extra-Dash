@@ -104,8 +104,8 @@ namespace RBRExtraDash
             });
 
             hotseatOverlay = new HotseatOverlay();
-            pluginManager.AddProperty("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseatOverlay));
-            /*pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonSerializer.Serialize(hotseatOverlay));*/
+            pluginManager.AddProperty("Hotseat.JsonResults", this.GetType(), "");
+            pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseatOverlay));
         }
     }
 }

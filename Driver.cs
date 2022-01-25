@@ -2,10 +2,14 @@
 
 public class Driver
 {
-    public string driverName;
+    public string firstName, lastName, shortName;
 
-    public Driver(string name)
+    public Driver(string first, string last)
 	{
-        driverName = name;
+        firstName = first;
+        lastName = last;
+
+        shortName = lastName.Substring(0, 3).ToUpper();
 	}
+
 }

@@ -9,12 +9,14 @@ public class RallyResult
 
 	public RallyResult(Driver driver)
 	{
+        stageTimes = new List<StageResult>();
         rallyDriver = driver;
 	}
 
-    public void AddTime(TimeSpan stageTime)
+    public void AddStageResult(TimeSpan stageTime, string stage)
     {
-        stageTimes.Add(new StageResult(stageTime, rallyDriver));
+        stageTimes.Add(new StageResult(stageTime, stage));
+        UpdateRallyTime();
     }
 
     public void UpdateRallyTime()

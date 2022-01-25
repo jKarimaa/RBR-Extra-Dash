@@ -3,13 +3,11 @@
 public class StageResult
 {
     public TimeSpan stageTime;
-    public Driver stageDriver;
+    public string trackName;
 
-	public StageResult(TimeSpan time, Driver driver)
+	public StageResult(TimeSpan time, string stage)
 	{
         stageTime = time;
-        stageDriver = driver;
+        trackName = stage;
 	}
 }
-
-

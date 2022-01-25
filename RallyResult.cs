@@ -6,6 +6,7 @@ public class RallyResult
     public List<StageResult> stageTimes;
     public TimeSpan rallyTime;
     public Driver rallyDriver;
+    public TimeSpan diffFirst;
 
 	public RallyResult(Driver driver)
 	{

@@ -1,6 +1,7 @@
 ﻿using GameReaderCommon;
 using SimHub.Plugins;
 using System;
+using Newtonsoft.Json;
 
 namespace RBRExtraDash
 {
@@ -14,6 +15,8 @@ namespace RBRExtraDash
 
         public RBRExtraDashSettings Settings;
         private double trip;
+
+        private HotseatOverlay hotseatOverlay;
 
         /// <summary>
         /// Instance of the current plugin manager
@@ -35,6 +38,8 @@ namespace RBRExtraDash
             {
                 if (data.GameName == "RBR")
                 {
+                    
+
                     trip = Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameData.StintOdo"));
                     
                     if (Convert.ToDouble(pluginManager.GetPropertyValue("DataCorePlugin.GameRawData.StageStartCountdown")) > 4)
@@ -53,7 +58,7 @@ namespace RBRExtraDash
                 }
             }
         }
-
+        
         /// <summary>
         /// Called at plugin manager stop, close/dispose anything needed here ! 
         /// Plugins are rebuilt at game change
@@ -97,6 +102,10 @@ namespace RBRExtraDash
                 Settings.trip = trip;
                 //SimHub.Logging.Current.Info("Trip reset to: " + trip);
             });
+
+            hotseatOverlay = new HotseatOverlay();
+            pluginManager.AddProperty("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseatOverlay));
+            /*pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonSerializer.Serialize(hotseatOverlay));*/
         }
     }
 }

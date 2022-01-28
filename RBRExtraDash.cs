@@ -17,12 +17,12 @@ namespace RBRExtraDash
         public RBRExtraDashSettings Settings;
         private double trip;
 
-        private HotseatOverlay hotseatOverlay;
-
         /// <summary>
         /// Instance of the current plugin manager
         /// </summary>
         public PluginManager PluginManager { get; set; }
+
+        public static HotseatOverlay hotseat;
 
         /// <summary>
         /// Called one time per game data update, contains all normalized game data, 
@@ -58,6 +58,9 @@ namespace RBRExtraDash
                     }
                 }
             }
+
+            pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseat));
+
         }
         
         /// <summary>
@@ -104,10 +107,8 @@ namespace RBRExtraDash
                 //SimHub.Logging.Current.Info("Trip reset to: " + trip);
             });
 
-            hotseatOverlay = new HotseatOverlay();
             pluginManager.AddProperty("Hotseat.JsonResults", this.GetType(), "");
-            pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseatOverlay));
-
+            
             MySqlLite.DataClass sql = new MySqlLite.DataClass();
             DataTable table = sql.selectQuery(
                 "SELECT * FROM F_RallyResult WHERE MapKey = 1"

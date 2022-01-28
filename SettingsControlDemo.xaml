@@ -9,10 +9,37 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <Grid>
-        <styles:SHSection Title="RBR Extra Dash options">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <styles:SHSection Title="RBR Extra Dash options" Margin="0,0,-363,-176" Grid.ColumnSpan="4">
             <StackPanel>
-                <ui:ControlsEditor FriendlyName="Trip reset" ActionName="RBRExtraDash.tripReset"></ui:ControlsEditor>  
+                <ui:ControlsEditor FriendlyName="Trip reset" ActionName="RBRExtraDash.tripReset"></ui:ControlsEditor>
+                <Line Stroke="Black" StrokeThickness="3"></Line>
+                <TextBlock Text="Drivers:"></TextBlock>
+                <TextBlock Text="1: "></TextBlock>
+                <TextBox x:Name="name1"
+                     Width="300" HorizontalAlignment="Left"/>
+                <TextBlock Text="2: "></TextBlock>
+                <TextBox x:Name="name2"
+                     Width="300" HorizontalAlignment="Left"/>
+                <TextBlock Text="3: "></TextBlock>
+                <TextBox x:Name="name3"
+                     Width="300" HorizontalAlignment="Left"/>
+                <TextBlock Text="4: "></TextBlock>
+                <TextBox x:Name="name4"
+                     Width="300" HorizontalAlignment="Left"/>
+                <TextBlock Text="5: "></TextBlock>
+                <TextBox x:Name="name5"
+                     Width="300" HorizontalAlignment="Left"/>
+
+                <styles:SHButtonPrimary Click="startRally" HorizontalAlignment="Left" Margin="12">Start Rally</styles:SHButtonPrimary>
             </StackPanel>
         </styles:SHSection>
+
+
     </Grid>
 </UserControl>

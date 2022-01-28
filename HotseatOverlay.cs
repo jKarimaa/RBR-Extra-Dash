@@ -5,27 +5,21 @@ using System.Collections.Generic;
 public class HotseatOverlay
 {
     public List<Driver> drivers;
-    public List<RallyResult> rallyResults;
+
+    public DateTime started;
     
 	public HotseatOverlay()
 	{
-        drivers =  new List<Driver>();
-        rallyResults = new List<RallyResult>();
-
-
-        rallyResults.Add(new RallyResult(new Driver("Joona", "Karimaa")));
-        rallyResults[0].AddStageResult(new TimeSpan(0, 0, 16, 32, 446), "Ouninpohja");
-
-        rallyResults.Add(new RallyResult(new Driver("Timo", "Elonen")));
-        rallyResults[1].AddStageResult(new TimeSpan(0, 0, 16, 12, 534), "Ouninpohja");
-
-        rallyResults.Add(new RallyResult(new Driver("Timo", "Ruokolainen")));
-        rallyResults[2].AddStageResult(new TimeSpan(0, 0, 16, 20, 107), "Ouninpohja");
-
-        UpdateRallyPositions();
+        started = DateTime.Now;
+        drivers = new List<Driver>();
     }
 
-    public void UpdateRallyPositions()
+    public void AddDriver(Driver driver)
+    {
+        drivers.Add(driver);
+    }
+
+/*    public void UpdateRallyPositions()
     {
         List<RallyResult> positionedResults = rallyResults.OrderBy(o => o.rallyTime).ToList();
 
@@ -37,6 +31,5 @@ public class HotseatOverlay
         }
 
         rallyResults = positionedResults;
-    }
-
+    }*/
 }

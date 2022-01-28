@@ -122,6 +122,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MySqlLite.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="HotseatOverlay.cs" />
     <Compile Include="RallyResult.cs" />

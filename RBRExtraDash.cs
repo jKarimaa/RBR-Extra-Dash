@@ -1,6 +1,7 @@
 ﻿using GameReaderCommon;
 using SimHub.Plugins;
 using System;
+using System.Data;
 using Newtonsoft.Json;
 
 namespace RBRExtraDash
@@ -106,6 +107,13 @@ namespace RBRExtraDash
             hotseatOverlay = new HotseatOverlay();
             pluginManager.AddProperty("Hotseat.JsonResults", this.GetType(), "");
             pluginManager.SetPropertyValue("Hotseat.JsonResults", this.GetType(), JsonConvert.SerializeObject(hotseatOverlay));
+
+            MySqlLite.DataClass sql = new MySqlLite.DataClass();
+            DataTable table = sql.selectQuery(
+                "SELECT * FROM F_RallyResult WHERE MapKey = 1"
+                );
+
+            SimHub.Logging.Current.Info(JsonConvert.SerializeObject(table));
         }
     }
 }

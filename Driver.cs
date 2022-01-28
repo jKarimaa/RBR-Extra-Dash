@@ -27,7 +27,7 @@ public class Driver
 
     string CreateShortName(string text)
     {
-        if (text.Length > 3)
+        if (text.Length > 2)
         {
             return text.Substring(0, 3).ToUpper();
         }
